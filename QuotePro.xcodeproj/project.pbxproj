@@ -18,6 +18,7 @@
 		73F2FA4C1DF86BFA003E8770 /* CreateQuoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F2FA4B1DF86BFA003E8770 /* CreateQuoteViewController.swift */; };
 		73F2FA4E1DF86DC3003E8770 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F2FA4D1DF86DC3003E8770 /* Quote.swift */; };
 		73F2FA501DF86DCF003E8770 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F2FA4F1DF86DCF003E8770 /* Photo.swift */; };
+		73F2FA551DF886C4003E8770 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F2FA541DF886C4003E8770 /* NetworkManager.swift */; };
 		D10E1E90336A74831532DC22 /* Pods_QuotePro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62BF8A0E2325C7DE02BA2A1F /* Pods_QuotePro.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,7 @@
 		73F2FA4B1DF86BFA003E8770 /* CreateQuoteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateQuoteViewController.swift; sourceTree = "<group>"; };
 		73F2FA4D1DF86DC3003E8770 /* Quote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
 		73F2FA4F1DF86DCF003E8770 /* Photo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		73F2FA541DF886C4003E8770 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DBC4A3FBD2999DCDE3F37468 /* Pods-QuotePro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuotePro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QuotePro/Pods-QuotePro.debug.xcconfig"; sourceTree = "<group>"; };
 		FE0B3F9B4EDBDD2223F7D41F /* Pods-QuotePro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QuotePro.release.xcconfig"; path = "Pods/Target Support Files/Pods-QuotePro/Pods-QuotePro.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -81,6 +83,7 @@
 		73F2FA311DF860D0003E8770 /* QuotePro */ = {
 			isa = PBXGroup;
 			children = (
+				73F2FA541DF886C4003E8770 /* NetworkManager.swift */,
 				73F2FA321DF860D0003E8770 /* AppDelegate.swift */,
 				73F2FA341DF860D0003E8770 /* ViewController.swift */,
 				73F2FA361DF860D0003E8770 /* Main.storyboard */,
@@ -230,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73F2FA551DF886C4003E8770 /* NetworkManager.swift in Sources */,
 				73F2FA501DF86DCF003E8770 /* Photo.swift in Sources */,
 				73F2FA4A1DF86BA6003E8770 /* TableViewCell.swift in Sources */,
 				73F2FA351DF860D0003E8770 /* ViewController.swift in Sources */,

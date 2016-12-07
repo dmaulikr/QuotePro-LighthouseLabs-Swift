@@ -6,20 +6,15 @@
 //  Copyright © 2016 Shahab Chaouche. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 class Quote: NSObject {
-    
-    // MARK: Properties
-    
-    var quoteText = "some quote"
-    var quoteAuthor = "some author"
-    
-    // MARK:Initialization
-    
-    override init() {
+    let quoteText: String
+    let quoteAuthor: String
+    init(quoteText: String, quoteAuthor: String) {
+        self.quoteText = quoteText
+        self.quoteAuthor = quoteAuthor
         super.init()
-        
     }
-
+    
 }
