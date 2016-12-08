@@ -8,7 +8,13 @@
 
 import Foundation
 
+protocol NetworkDelegate {
+    func populateView(with quote:Quote)
+}
+
 class NetworkManager {
+    
+    var delegate:NetworkDelegate?
     
     func fetchQuote() {
         
@@ -17,6 +23,8 @@ class NetworkManager {
         // nsurlsession
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
+        
+        
         let task = session.dataTask(with: url, completionHandler: { (data: Data?, response:URLResponse?, error:Error?) -> Void in
             
             // check response using guard
@@ -44,17 +52,30 @@ class NetworkManager {
             }
             
             // down here we have the data as an unwrapped object
-            
+            print(#line, data)
             
             // deserialize the json
             
+            let result = try! JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary
+            
+            
+            if let result = result {
+                let quote = result.value(forKey: "quoteText") as! String
+                let author = result.value(forKey: "quoteAuthor") as! String
+                
+                var object = Quote(quoteText: quote, quoteAuthor: author)
+                print(#line, object.quoteText)
+                self.delegate?.populateView(with: object)
+                
+                
+            }
             
             //  delegation, or a block
             
             
             
         })
-
+        
         task.resume()
         
         // handle the callback
@@ -65,6 +86,7 @@ class NetworkManager {
         
         
     }
+    
     
     
     

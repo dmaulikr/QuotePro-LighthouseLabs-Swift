@@ -7,23 +7,60 @@
 //
 
 import UIKit
+import Nuke
 
-class CreateQuoteViewController: UIViewController {
-
+class CreateQuoteViewController: UIViewController, NetworkDelegate {
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var quoteLabel: UILabel!
+    
+    @IBOutlet weak var image: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+            }
+    
+    func populateView(with quote:Quote) {
+        
+        print(quote.quoteText, quote.quoteAuthor)
+        
+        DispatchQueue.main.async {
+            self.authorLabel.text = quote.quoteAuthor
+            self.quoteLabel.text = quote.quoteText
+        }
+    }
+    
+    @IBAction func generateNewQuote(_ sender: Any) {
+        
+        let networkManager =  NetworkManager()
+        networkManager.fetchQuote()
+        networkManager.delegate = self
 
-        // Do any additional setup after loading the view.
     }
 
-    /*
-    // MARK: - Navigation
+    @IBAction func generateImage(_ sender: Any) {
+        self.image.image = nil
+        guard let url = URL(string :"https://unsplash.it/200/300/?random") else { return }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        do {
+            let quoteImage = try UIImage(data: Data(contentsOf: url))
+            image.image = quoteImage
+        } catch {
+            print("Could not get image")
+        }
+        
+//        Nuke.loadImage(with: url, into: image)
+
+//        Nuke.taskWithURL(url) { response in
+//            switch response {
+//            case let .Success(image, responseInfo):
+//                
+//            case let .Failure(error):
+//                print("STUFF")
+//            }
+//            }.resume()
+        
     }
-    */
+
 
 }
