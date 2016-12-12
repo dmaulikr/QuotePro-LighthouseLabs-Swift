@@ -56,17 +56,16 @@ class NetworkManager {
             
             // deserialize the json
             
-            let result = try! JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary
+            let result = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary
             
             
             if let result = result {
-                let quote = result.value(forKey: "quoteText") as! String
-                let author = result.value(forKey: "quoteAuthor") as! String
+                let quote = result?.value(forKey: "quoteText") as! String
+                let author = result?.value(forKey: "quoteAuthor") as! String
                 
-                var object = Quote(quoteText: quote, quoteAuthor: author)
+                let object = Quote(quoteText: quote, quoteAuthor: author)
                 print(#line, object.quoteText)
                 self.delegate?.populateView(with: object)
-                
                 
             }
             

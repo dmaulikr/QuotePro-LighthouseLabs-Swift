@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Nuke
-
 class CreateQuoteViewController: UIViewController, NetworkDelegate {
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var quoteLabel: UILabel!
@@ -49,18 +47,14 @@ class CreateQuoteViewController: UIViewController, NetworkDelegate {
             print("Could not get image")
         }
         
-//        Nuke.loadImage(with: url, into: image)
-
-//        Nuke.taskWithURL(url) { response in
-//            switch response {
-//            case let .Success(image, responseInfo):
-//                
-//            case let .Failure(error):
-//                print("STUFF")
-//            }
-//            }.resume()
-        
     }
 
+    @IBAction func cancel(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+        
+        
+    }
+    
 
 }
