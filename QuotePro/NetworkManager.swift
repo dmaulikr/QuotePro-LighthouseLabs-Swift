@@ -9,7 +9,9 @@
 import Foundation
 
 protocol NetworkDelegate {
+    
     func populateView(with quote:Quote)
+    
 }
 
 class NetworkManager {
@@ -43,7 +45,6 @@ class NetworkManager {
                 print("error: \(error)")
                 return
             }
-            
             
             guard let data = data else {
                 
@@ -79,14 +80,6 @@ class NetworkManager {
         
         // handle the callback
         
-        
-        
-        
-        
-        
     }
-    
-    
-    
     
 }

@@ -16,7 +16,10 @@ class CreateQuoteViewController: UIViewController, NetworkDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-            }
+        self.title = "Create Your Quote"
+        
+        
+    }
     
     func populateView(with quote:Quote) {
         
@@ -24,7 +27,9 @@ class CreateQuoteViewController: UIViewController, NetworkDelegate {
         
         DispatchQueue.main.async {
             self.authorLabel.text = quote.quoteAuthor
+            self.authorLabel.sizeToFit()
             self.quoteLabel.text = quote.quoteText
+            self.quoteLabel.sizeToFit()
         }
     }
     
